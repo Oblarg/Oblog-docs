@@ -7,6 +7,8 @@ For an overview of what Oblog is and why you should use it, see the :ref:`introd
 
 The Oblog API docs can be found `here <https://oblarg.github.io/Oblog/>`__.
 
+An example project (based on the WPILib FrisbeeBot example project) demonstrating the usage of several Oblog features can be found `here <https://github.com/Oblarg/Oblog/tree/master/examples/src/main/java/io/github/oblarg/logexample>`__
+
 Contents
 --------
 
@@ -18,4 +20,5 @@ Contents
   logging
   configuration
   loggables
+  logger
 

@@ -72,3 +72,8 @@ Sometimes a ``Loggable`` class will occur as a field of many other ``Loggable`` 
 To do this, annotate the ``Loggable`` class with the ``Log.Exclude`` or ``Config.Exclude`` annotation.  ``Loggable`` classes excluded in this way will never appear on the dashboard unless they are explicitly re-included with a ``Log.Include`` or ``Config.Include`` annotation on the specific field whose display on the dashboard is desired.
 
 Alternatively, the ``Exclude`` annotations can also be used on individual fields, rather than on the entire class.
+
+Arrays/Lists of Loggables
+-------------------------
+
+Oblog will also correctly handle arrays and lists of ``Loggable`` classes; in fact, Oblog dynamically checks the runtime type of each array/list element during startup, so ``Loggable`` elements of arrays/lists will be handled correctly even if the declared array type is not itself ``Loggable``.

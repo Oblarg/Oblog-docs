@@ -9,6 +9,8 @@ Using the Config Annotations
 The @Config Annotation
 ^^^^^^^^^^^^^^^^^^^^^^
 
+.. note:: The Shuffleboard values displayed for data-binding via setter methods are one-way; changes to the value in code will *not* be reflected on the dashboard.  This holds true even if the value is modified by Oblog itself; if two data-binding widgets are configured for the same setter, their displayed values will not automatically remain synchronized.  The value in code will correspond to whichever widget was most-recently updated.
+
 The ``@Config`` annotation may be used to perform data-binding on boolean- or numeric-valued setters and ``Sendable`` fields, as follows:
 
 .. code:: java
@@ -66,6 +68,24 @@ Tab Name
 ^^^^^^^^
 
 The ``tabName`` parameter can be used to explicitly override Oblog's inferred tab structure.  If the ``tabName`` parameter is set, the bound value will be displayed under a Shuffleboard tab of the specified name.
+
+Method Name/Types
+^^^^^^^^^^^^^^^^^
+
+The ``methodName`` and ``methodTypes`` parameters can be used to extract a setter from a complex type for data-binding.  To do this, use the parameters to specify the name and argument types of the setter.  For example:
+
+.. code:: java
+
+  public class HasSetter {
+    public void setFoo(double foo) {
+      // what is done with the argument is unimportant
+    }
+  }
+
+.. code:: java
+
+  @Config(methodName = "setFoo", methodTypes = {double.class})
+  HasSetter hasSetter;
 
 Default Values
 ^^^^^^^^^^^^^^
