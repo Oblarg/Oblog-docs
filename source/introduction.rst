@@ -19,6 +19,7 @@ Oblog improves this by replacing the fluent builder API with one based on `annot
 
 .. code:: Java
 
+  // With Oblog, this will send loggedInteger to the dashboard - it's that easy!
   @Log
   int loggedInteger;
 
