@@ -15,7 +15,14 @@ Why Use Oblog?
 
 However, the Shuffleboard API provided through WPILib is highly verbose and somewhat clunky.  The fluent builder pattern used results in rather long method call chains for relatively simple dashboard configuration, and widget parameters are specified entirely through string-valued key-value pairs, which are error-prone and not self-documenting.
 
-Oblog improves this by replacing the fluent builder API with one based on `annotations <https://en.wikipedia.org/wiki/Java_annotation>`__.  Rather than calling methods to log data explicitly, Oblog allows users to tag fields, getters, and/or setters with widget-specific annotations, which are then automatically sent to the dashboard.  This results in an extremely small code footprint, and allows logging functionality to easily be added to existing code with no major changes - simply annotate the fields you want to be logged, and Oblog does the rest.
+Oblog improves this by replacing the fluent builder API with one based on `annotations <https://en.wikipedia.org/wiki/Java_annotation>`__:
+
+.. code:: Java
+
+  @Log
+  int loggedInteger;
+
+Rather than calling methods to log data explicitly, Oblog allows users to tag fields, getters, and/or setters with widget-specific annotations, which are then automatically sent to the dashboard.  This results in an extremely small code footprint, and allows logging functionality to easily be added to existing code with no major changes - simply annotate the fields you want to be logged, and Oblog does the rest.
 
 For complex robot projects, such as those using the WPILib Command-based framework, it often becomes desirable to structure both the dashboard layout and the log file structure to mirror the structure of the code.  Oblog supports this, as well - through use of the ``Loggable`` interface, users can specify classes that will constitute tabs or layouts on their dashboard.  Oblog will automatically recurse down the tree of ``Loggable`` objects at start time, building a corresponding tree of tabs, layouts, and sub-layouts on the dashboard.  Users can thus, for example, easily specify separate tabs for each of their robot subsystems or commands, without significantly increasing their code verbosity - the annotations remain unchanged, and the annotated fields are automatically placed in the correct tabs or layouts!
 
