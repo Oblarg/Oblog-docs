@@ -20,9 +20,9 @@ Secondly, add the following to the ``dependencies`` list:
 
 .. code::
 
-  implementation "com.github.Oblarg.Oblog:lib:<RELEASE_TAG>"
+  implementation "com.github.Oblarg.Oblog:lib:RELEASE_TAG"
 
-where ``<RELEASE_TAG>`` is the `latest release version tag <https://github.com/Oblarg/Oblog/releases>`__ (e.g. ``3.0.3``).
+where ``RELEASE_TAG`` is the `latest release version tag <https://github.com/Oblarg/Oblog/releases>`__ (e.g. ``3.0.3``).
 
 If you wish to automatically build with the latest version of Oblog, you can use ``master-SNAPSHOT`` instead of a release tag - keep in mind, however, that this may break your code without warning when Oblog is updated.
 
