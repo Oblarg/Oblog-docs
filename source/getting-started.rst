@@ -20,7 +20,7 @@ Secondly, add the following to the ``dependencies`` list:
 
 .. code::
 
-  implementation "com.github.Oblarg.Oblog:lib:RELEASE_TAG"
+  implementation "com.github.Oblarg.Oblog:RELEASE_TAG"
 
 where ``RELEASE_TAG`` is the `latest release version tag <https://github.com/Oblarg/Oblog/releases>`__ (e.g. ``3.0.3``).
 
