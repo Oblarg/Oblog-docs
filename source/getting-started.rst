@@ -60,6 +60,8 @@ To log a field in the root container, simply annotate it with the ``@Log`` annot
 
   @Log
   int exampleField = 5;
+  
+Note that the root container is specified by the ``configureLoggingAndConfig`` call.  If you want to log items from classes other than the root container, you must make those classes implement the ``Loggable`` interface. For more information, see :ref:`loggables:Creating Loggable Classes`.
 
 The field will be automatically added logged on the dashboard, and will track the value of the field in code.  It's that easy!
 
